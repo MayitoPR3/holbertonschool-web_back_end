@@ -1,9 +1,9 @@
 function taskFirst() {
-    const task = '';
+    const task = 'I prefer const when I can.';
     console.log({task})
 }
 
 function taskNext() {
-    let combination = ''
+    let combination = 'But sometimes let';
     console.log({combination});
 }
