@@ -1,3 +1,4 @@
 export default class ClassRoom {
-    _maxStudentsSize = maxStudentsSize(Number)
+    maxStudentsSize = () =>
+        maxStudentsSize = _maxStudentsSize
 }
