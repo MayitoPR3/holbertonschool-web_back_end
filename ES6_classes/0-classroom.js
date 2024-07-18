@@ -1,4 +1,5 @@
 export default class ClassRoom {
-    maxStudentsSize = () =>
-        maxStudentsSize = _maxStudentsSize
+    constructor(maxStudentsSize) {
+        this._maxStudentsSize = maxStudentsSize
+    }
 }
