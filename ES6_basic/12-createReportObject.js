@@ -1,4 +1,4 @@
-function createReportObject(employeesList) {
+function createReportObject() {
   let allEmployees = {};
 
   employeesList.forEach(employee => {
