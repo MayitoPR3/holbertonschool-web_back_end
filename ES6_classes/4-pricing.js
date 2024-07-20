@@ -10,6 +10,7 @@ export default class Pricing {
     const code = (this.currency._code);
     const name = (this.currency._name);
     const money = `${this.amount} ${name} (${code})`;
+
     return money;
   }
 
@@ -21,7 +22,8 @@ export default class Pricing {
     if (typeof conversionRate !== 'number') {
       throw new TypeError('conversionRate must be a string');
     }
-    return amount * conversionRate;
+
+    return (amount * conversionRate);
   }
 
   get amount() {
