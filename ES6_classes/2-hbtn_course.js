@@ -1,52 +1,46 @@
-class HolbertonCourse {
-  constructor(name, length, students) {
-    // Verify the types of attributes during object creation
-    if (typeof name !== 'string') {
-      throw new TypeError('Name must be a string');
-    }
-    if (typeof length !== 'number') {
-      throw new TypeError('Length must be a number');
-    }
-    if (!Array.isArray(students) || !students.every(s => typeof s === 'string')) {
-      throw new TypeError('Students must be an array of strings');
-    }
-
-    // Store attributes in underscore version
-    this._name = name;
-    this._length = length;
-    this._students = students.slice(); // Create a copy of students array
+export default class HolbertonCourse {
+  constructor(name = '', length = 0, students = []) {
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
 
-  // Getter and setter for name
   get name() {
     return this._name;
   }
-  set name(newName) {
-    if (typeof newName !== 'string') {
+
+  set name(value) {
+    if (typeof value !== 'string') {
       throw new TypeError('Name must be a string');
     }
-    this._name = newName;
+    this._name = value;
   }
 
-  // Getter and setter for length
   get length() {
     return this._length;
   }
-  set length(newLength) {
-    if (typeof newLength !== 'number') {
-      throw new TypeError('Length must be a number');
+
+  set length(value) {
+    if (typeof value !== 'number') {
+      throw TypeError('Length must be a number');
     }
-    this._length = newLength;
+    this._length = value;
   }
 
-  // Getter and setter for students
   get students() {
     return this._students;
   }
-  set students(newStudents) {
-    if (!Array.isArray(newStudents) || !newStudents.every(s => typeof s === 'string')) {
+
+  set students(currStudents) {
+    if (typeof currStudents === 'object') {
+      for (const student in currStudents) {
+        if (typeof student !== 'string') {
+          throw new TypeError('Students must be an array of strings');
+        }
+      }
+    } else {
       throw new TypeError('Students must be an array of strings');
     }
-    this._students = newStudents.slice(); // Update students with a copy of the new array
+    this._students = currStudents;
   }
 }
