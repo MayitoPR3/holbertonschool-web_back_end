@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+""" Defines the sum of the floar values"""
 
 def add(a: float, b: float) -> float:
     """
