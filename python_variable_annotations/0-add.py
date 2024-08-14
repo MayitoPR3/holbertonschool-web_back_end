@@ -2,6 +2,7 @@
 
 """ Defines the sum of the floar values"""
 
+
 def add(a: float, b: float) -> float:
     """
     Calculate the sum of two floating-point numbers.
