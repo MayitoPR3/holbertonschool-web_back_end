@@ -3,7 +3,7 @@
 """ Defines the concat function"""
 
 
-def concat(str1, str2):
+def concat(str1: str, str2: str) -> str:
     """ Concatenate two strings.
 
     Args:
