@@ -12,6 +12,6 @@ def floor(n: float) -> int:
     n (float): The floating-point number to round.
 
     Returns:
-    float: The rounded integer.
+    int: The rounded integer.
     """
     return math.floor(n)
