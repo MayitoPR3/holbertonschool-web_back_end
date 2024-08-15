@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 import math
 
-"""defines the floor function"""
-
 
 def floor(n: float) -> int:
     """
