@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+import math
 
+"""defines the floor function"""
 
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     """
     Return the floor of the floar.
 
@@ -11,4 +13,4 @@ def floor(n: float) -> float:
     Returns:
     float: The rounded integer.
     """
-    return float(n)
+    return math.floor(n)
