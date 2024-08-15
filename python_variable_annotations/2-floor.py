@@ -3,6 +3,7 @@ import math
 
 """defines the floor function"""
 
+
 def floor(n: float) -> int:
     """
     Return the floor of the floar.
