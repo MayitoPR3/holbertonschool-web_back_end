@@ -4,7 +4,7 @@ import math
 """Takes a float n and returns the floor of the float"""
 
 
-def floor(n: float) -> int:
+def floor(n: float) -> float:
     """
     Return the floor of the floar.
 
@@ -12,7 +12,7 @@ def floor(n: float) -> int:
     n (float): The floating-point number to round.
 
     Returns:
-    int: The largest integer less than
+    float: The largest integer less than
     or equal to the given float.
     """
     return math.floor(n)
