@@ -4,7 +4,8 @@
 from typing import Callable
 
 """
-Module to define a function that creates a multiplier function.
+Module make_multiplier to define a function
+that creates a multiplier function.
 """
 
 
