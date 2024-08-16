@@ -1,17 +1,13 @@
 #!/usr/bin/env python3
+"""
+Annotate the below function’s parameters and return values
+with the appropriate types
+"""
+from typing import Iterable, Sequence, List, Tuple
 
-from typing import List, Tuple
 
-
-def element_length(lst: List[str]) -> List[Tuple[str, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
-    Given a list of strings, return a list of tuples where each tuple contains
-    the string and its length.
-
-    Args:
-    lst (List[str]): A list of strings.
-
-    Returns:
-    List[Tuple[str, int]]: A list of tuples where each tuple contains a string and its length.
+        length of element
     """
     return [(i, len(i)) for i in lst]
