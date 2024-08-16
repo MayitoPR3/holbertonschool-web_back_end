@@ -2,8 +2,10 @@
 
 from typing import List, Union
 
-""" Defines a function to calculate the sum of a list containing integers
-and floating numbers """
+"""
+Module to define a function for summing a list of
+mixed integers and floating-point numbers.
+"""
 
 
 def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
