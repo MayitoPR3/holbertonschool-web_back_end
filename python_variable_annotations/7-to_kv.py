@@ -2,8 +2,10 @@
 
 from typing import Union, Tuple
 
-""" function named to_kv takes a string and int
-and returns a tuple"""
+"""
+Function `to_kv` takes a string k and an int
+OR float v as arguments and returns a tuple
+"""
 
 
 def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
