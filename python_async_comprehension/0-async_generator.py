@@ -8,7 +8,7 @@ i: yield a random number between 0 and 10
 
 """
 
-from typing import Generator
+import random
 import asyncio
 
 
@@ -16,6 +16,6 @@ async def async_generator():
     """
     Create an asynchronous generator that yields numbers from 0 to 10.
     """
-    for i in range(11):
-        asyncio.sleep(1)  # Simulate async delay for demonstration purposes. 0 seconds delay in this case.
-        yield i
+    for _ in range(10):
+        await asyncio.sleep(1)  # Simulate async delay for demonstration purposes. 0 seconds delay in this case.
+        yield random.randint(0, 10)
