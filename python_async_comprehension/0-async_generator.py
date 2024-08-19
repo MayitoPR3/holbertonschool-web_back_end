@@ -1,8 +1,18 @@
+"""
+Write a coroutine called async_generator that takes no arguments.
+
+The coroutine will loop 10 times, each time asynchronously wait 1 second, then yield a random number between 0 and 10. Use the random module.
+
+Yields:
+i: yield a random number between 0 and 10
+
+"""
+
 from typing import Generator
 import asyncio
 
 
-def async_generator():
+async def async_generator():
     """
     Create an asynchronous generator that yields numbers from 0 to 10.
     """
