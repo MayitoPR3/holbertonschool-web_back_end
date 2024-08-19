@@ -13,8 +13,7 @@ from typing import Generator
 from asyncio import sleep
 
 
-
-async def async_generator() -> Generator[float, None]:
+async def async_generator() -> Generator[float, None, None]:
     """
     Create an asynchronous generator that yields numbers from 0 to 10.
     """
