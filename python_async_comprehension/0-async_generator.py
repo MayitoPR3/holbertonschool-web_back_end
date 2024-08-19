@@ -10,12 +10,11 @@ i: yield a random number between 0 and 10
 
 import random
 import asyncio
-from typing import Generator
+from typing import AsyncGenerator
 from asyncio import sleep
 
 
-
-async def async_generator() -> Generator[float, None, None]:
+async def async_generator() -> AsyncGenerator[float, None, None]:
     """
     Create an asynchronous generator that yields numbers from 0 to 10.
     """
