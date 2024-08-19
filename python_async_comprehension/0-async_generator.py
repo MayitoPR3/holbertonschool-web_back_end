@@ -10,7 +10,7 @@ i: yield a random number between 0 and 10
 
 import random
 import asyncio
-from typing import AsyncGenerator
+from typing import Generator
 from asyncio import sleep
 
 
