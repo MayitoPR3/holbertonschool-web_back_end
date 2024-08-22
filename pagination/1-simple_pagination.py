@@ -17,8 +17,7 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
-        """
+        """Cached dataset"""
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
@@ -29,10 +28,10 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-            - Use assert to verify that both arguments
+            Use assert to verify that both arguments
             are integers greater than 0.
 
-            - Use index_range to find the correct indexes to paginate
+            Use index_range to find the correct indexes to paginate
             the dataset correctly and return the appropriate page
             of the dataset (i.e. the correct list of rows).
         """
@@ -46,4 +45,3 @@ class Server:
 
         result = self.dataset()
         return result[start:end]
-    
