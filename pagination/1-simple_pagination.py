@@ -23,7 +23,7 @@ class Server:
         if self.__dataset is None:
             with open(self.DATA_FILE, newline='') as f:
                 reader = csv.reader(f)
-                self.__dataset = [row for row in reader][1:]  # Skip header row
+                self.__dataset = [row for row in reader][1:]
 
         return self.__dataset
 
@@ -31,15 +31,12 @@ class Server:
         """
         Return the appropriate page of the dataset.
         """
-        # Validate input types and values
         if not isinstance(page, int) or not isinstance(page_size, int):
             raise TypeError("Both page and page_size must be integers.")
         if page <= 0 or page_size <= 0:
             raise ValueError("Both page and page_size must be greater than 0.")
 
-        # Get the start and end indexes
         start, end = index_range(page, page_size)
-        data = self.dataset()  # Fetch dataset once
+        data = self.dataset()
 
-        # Return the sliced dataset
         return data[start:end]
