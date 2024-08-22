@@ -3,7 +3,6 @@
 """ 1. Simple pagination """
 
 import csv
-import math
 from typing import List
 
 index_range = __import__('0-simple_helper_function').index_range
@@ -22,29 +21,25 @@ class Server:
     def dataset(self) -> List[List]:
         """Cached dataset"""
         if self.__dataset is None:
-            with open(self.DATA_FILE) as f:
+            with open(self.DATA_FILE, newline='') as f:
                 reader = csv.reader(f)
-                dataset = [row for row in reader]
-            self.__dataset = dataset[1:]
+                self.__dataset = [row for row in reader][1:]  # Skip header row
 
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-            Use assert to verify that both arguments
-            are integers greater than 0.
-
-            Use index_range to find the correct indexes to paginate
-            the dataset correctly and return the appropriate page
-            of the dataset (i.e. the correct list of rows).
+        Return the appropriate page of the dataset.
         """
-        assert(type(page) == int) and page > 0
-        assert(type(page_size) == int) and page_size > 0
+        # Validate input types and values
+        if not isinstance(page, int) or not isinstance(page_size, int):
+            raise TypeError("Both page and page_size must be integers.")
+        if page <= 0 or page_size <= 0:
+            raise ValueError("Both page and page_size must be greater than 0.")
 
+        # Get the start and end indexes
         start, end = index_range(page, page_size)
-        result = []
-        if start >= len(self.dataset()):
-            return result
+        data = self.dataset()  # Fetch dataset once
 
-        result = self.dataset()
-        return result[start:end]
+        # Return the sliced dataset
+        return data[start:end]
