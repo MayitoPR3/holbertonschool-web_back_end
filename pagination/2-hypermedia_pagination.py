@@ -63,3 +63,4 @@ class Server:
                 'prev_page': prev_page,
                 'total_pages': size_all_pages}
         return data
+    
