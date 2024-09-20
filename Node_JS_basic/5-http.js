@@ -4,19 +4,19 @@ const fs = require('fs');
 function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, { encoding: 'utf-8' }, (err, data) => {
-        if (err) return reject(Error('Cannot load the database'));
+      if (err) return reject(Error('Cannot load the database'));
 
-        const lines = data.split('\n').slice(1, -1);
-        const header = data.split('\n').slice(0, 1)[0].split(',');
-        const idxFn = header.findIndex((ele) => ele === 'firstname');
-        const idxFd = header.findIndex((ele) => ele === 'field');
-        const fields = {};
-        const students = {};
-        const all = {};
+      const lines = data.split('\n').slice(1, -1);
+      const header = data.split('\n').slice(0, 1)[0].split(',');
+      const idxFn = header.findIndex((ele) => ele === 'firstname');
+      const idxFd = header.findIndex((ele) => ele === 'field');
+      const fields = {};
+      const students = {};
+      const all = {};
 
-        lines.forEach((line) => {
-            const list = line.split(',');
-            if (!fields[list[idxFd]]) fields[list[idxFd]] = 0;
+      lines.forEach((line) => {
+        const list = line.split(',');
+          if (!fields[list[idxFd]]) fields[list[idxFd]] = 0;
             fields[list[idxFd]] += 1;
             if (!students[list[idxFd]]) students[list[idxFd]] = '';
             students[list[idxFd]] += students[list[idxFd]]
